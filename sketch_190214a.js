@@ -1,7 +1,7 @@
-let x, y;
-let xSpeed, ySpeed;
-let dvd;
-let timesHit = 0, centerCrosses = 0;
+var x, y;
+var xSpeed, ySpeed;
+var dvd;
+var timesHit = 0, centerCrosses = 0;
 
 function preload() {
   soundFormats('mp3');
@@ -16,14 +16,15 @@ function setup() {
   x = random(width - dvd.width);
   y = random(height - dvd.height);
   hitSound.setVolume(0.5);
+  hitSound.play();
 }
 
 function hitCorner() {
-  let topLeft = x <= 0 && y <= 0
-  let topRight = x >= width - dvd.width && y <= 0
-  let bottomLeft = x <= 0 && y >= height - dvd.height
-  let bottomRight = x >= width - dvd.width && y >= height - dvd.height
-  let center = x == width / 2 && y == height / 2
+  var topLeft = x <= 0 && y <= 0
+  var topRight = x >= width - dvd.width && y <= 0
+  var bottomLeft = x <= 0 && y >= height - dvd.height
+  var bottomRight = x >= width - dvd.width && y >= height - dvd.height
+  var center = x == width / 2 && y == height / 2
    
   if (topLeft || topRight || bottomRight || bottomLeft) {
      hitSound.play();
